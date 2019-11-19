@@ -9,6 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SignIn" />
+        <activity android:name=".DataStatement" />
+        <activity android:name=".PasswordCreation" />
+        <activity android:name=".OptionalInfo" />
+        <activity android:name=".EmailAddress" />
+        <activity android:name=".VerificationCode" />
+        <activity android:name=".UsernameGeneration" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
