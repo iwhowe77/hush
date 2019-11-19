@@ -1,3 +1,13 @@
 <resources>
-    <string name="app_name">hush</string>
+    <string name="app_name">Hush</string>
+    <string name="sign_in">sign in</string>
+    <string name="sign_up">sign up</string>
+    <string name="hush">hush</string>
+    <string name="chat_rant_r">chat \u00B7 rant \u00B7 rate</string>
+    <string name="what_s_your">what\'s your university\nemail address?</string>
+    <string name="we_will_sen">we will send you a \nverification code.</string>
+    <string name="next">next</string>
+    <string name="enter_the_v">enter the verification\ncode we sent.</string>
+    <string name="we_can_rese">we can resend your\ncode after 30 seconds.</string>
+    <string name="resend">resend</string>
 </resources>
