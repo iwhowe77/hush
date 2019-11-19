@@ -92,4 +92,20 @@
         <item name="android:textSize">28sp</item>
         <item name="android:textColor">#FFFFFF</item>
     </style>
+
+    <style name="write_post">
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="add_a_title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#838383</item>
+    </style>
+
+    <style name="add_a_post_">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">#838383</item>
+
+    </style>
 </resources>

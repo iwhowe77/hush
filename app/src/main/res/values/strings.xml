@@ -22,6 +22,9 @@
     <string name="password">password</string>
     <string name="remember_me">remember me</string>
     <string name="invalid_ema">invalid email or password.</string>
+    <string name="write_post">write post</string>
+    <string name="add_a_title">Add a title for your post</string>
+    <string name="add_at_leas">Add at least one tag</string>
 
 
 </resources>
