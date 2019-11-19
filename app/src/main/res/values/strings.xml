@@ -10,4 +10,16 @@
     <string name="enter_the_v">enter the verification\ncode we sent.</string>
     <string name="we_can_rese">we can resend your\ncode after 30 seconds.</string>
     <string name="resend">resend</string>
+    <string name="this_will_b">this will be your\nusername.</string>
+    <string name="try_to_keep">try to keep it anonymous,\nthat\'s what makes this fun.</string>
+    <string name="optional_in">optional information</string>
+    <string name="secure_your">secure your account,\nchoose a password.</string>
+    <string name="password_mu">password must be at least 8 characters</string>
+    <string name="try_to_make">try to make it at least 8 characters</string>
+    <string name="here_at_hus">here at hush we \nbelieve in anonymity.\nwe don\'t sell data or\nuse it to target ads.\n\nyour email will be used\nfor login purposes and\nto confirm your school.</string>
+    <string name="welcome_bac">welcome back</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="remember_me">remember me</string>
+
 </resources>
