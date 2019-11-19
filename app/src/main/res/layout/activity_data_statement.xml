@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_screen"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clipToOutline="true"
+    android:background="#564CF5"
+    tools:context=".DataStatement">
+
+    <Button
+        android:id="@+id/back_white_"
+        android:layout_width="18.8dp"
+        android:layout_height="35dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="27dp"
+        android:layout_="true"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/back_white_"
+        android:textColor="#FFFFFF"></Button>
+
+
+    <TextView
+        android:id="@+id/here_at_hus"
+        android:layout_width="286dp"
+        android:layout_height="310dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="169dp"
+        android:text="@string/here_at_hus"
+        android:textAppearance="@style/here_at_hus"
+        android:gravity="center_horizontal|top"
+        />
+
+
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="547dp"
+        android:text="@string/next"
+        android:textColor="@color/white"
+        android:textAppearance="@style/sign_in"
+        android:gravity="center_horizontal|center_vertical"
+        android:background="@drawable/rounded_button_inactive"
+
+        ></Button>
+
+</RelativeLayout>
