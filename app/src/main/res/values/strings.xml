@@ -21,5 +21,7 @@
     <string name="email">email</string>
     <string name="password">password</string>
     <string name="remember_me">remember me</string>
+    <string name="invalid_ema">invalid email or password.</string>
+
 
 </resources>
