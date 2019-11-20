@@ -4,7 +4,6 @@
     android:id="@+id/search_activity"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:clipToOutline="true"
     android:background="#FFFFFF"
     tools:context=".SearchResults">
     <RelativeLayout
