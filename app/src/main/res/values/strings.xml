@@ -28,4 +28,9 @@
     <string name="hottest">hottest</string>
     <string name="controv">controv.</string>
     <string name="rising">rising</string>
+    <string name="post">post</string>
+    <string name="post_title">Title Here</string>
+    <string name="post_text">post text</string>
+    <string name="time_stamp">x hours ago</string>
+    <string name="tags">tags</string>
 </resources>
