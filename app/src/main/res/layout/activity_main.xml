@@ -5,7 +5,6 @@
     android:id="@+id/main_screen"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:clipToOutline="true"
     android:background="#564CF5"
     tools:context=".MainActivity">
 
