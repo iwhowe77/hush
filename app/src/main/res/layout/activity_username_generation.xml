@@ -86,7 +86,7 @@
         />
 
     <EditText
-        android:id="@+id/rectangle"
+        android:id="@+id/username"
         android:layout_width="260dp"
         android:layout_height="40dp"
         android:layout_centerInParent="true"
