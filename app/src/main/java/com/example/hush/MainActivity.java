@@ -15,12 +15,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button button = (Button)findViewById(R.id.sign_up);
-        button.setOnClickListener(new View.OnClickListener() {
+        Button sign_up_button = (Button)findViewById(R.id.sign_up);
+        sign_up_button.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DataStatement.class);
+                startActivity(intent);
+            }
+        });
+
+        Button sign_in_button = (Button)findViewById(R.id.sign_in);
+        sign_in_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, SignIn.class);
                 startActivity(intent);
             }
         });
