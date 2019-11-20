@@ -25,6 +25,7 @@
         <activity android:name=".EmailAddress" />
         <activity android:name=".VerificationCode" />
         <activity android:name=".UsernameGeneration" />
+        <activity android:name=".WritePost" />
         <activity android:name=".MainActivity">
 
         </activity>
