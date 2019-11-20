@@ -33,4 +33,5 @@
     <string name="post_text">post text</string>
     <string name="time_stamp">x hours ago</string>
     <string name="tags">tags</string>
+    <string name="search">search</string>
 </resources>
