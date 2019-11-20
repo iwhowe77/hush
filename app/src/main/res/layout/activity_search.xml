@@ -45,21 +45,20 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"/>
         </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:text="clear all"
+            android:textColor="#ff000000"/>
 
         <ListView
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
             android:id="@+id/history"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/search_box"
-            android:dividerHeight="0sp">
-
-        </ListView>
-        <ListView
-            android:id="@+id/results"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/history"
-            android:layout_alignParentBottom="true"
             android:dividerHeight="0sp">
 
         </ListView>
