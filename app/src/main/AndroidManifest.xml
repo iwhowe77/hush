@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".SearchResults"/>
+=======
+        <activity android:name=".NewsFeed"></activity>
+>>>>>>> ca36916a93e6bf3c7c0bf85533c3a8e87e606fab
         <activity android:name=".SignIn" />
         <activity android:name=".DataStatement" />
         <activity android:name=".PasswordCreation" />

@@ -5,7 +5,8 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:clipToOutline="true"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    >
     <RelativeLayout
         android:id="@+id/news_feed_bar"
         android:layout_width="match_parent"
@@ -81,6 +82,7 @@
                 android:background="#FFFFFF"/>
         </LinearLayout>
         <ListView
+            android:id="@+id/list_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_below="@id/sort_bar"
