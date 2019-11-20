@@ -22,6 +22,10 @@
     <string name="password">password</string>
     <string name="remember_me">remember me</string>
     <string name="invalid_ema">invalid email or password.</string>
-
-
+    <string name="news_feed">news feed</string>
+    <string name="newest">newest</string>
+    <string name="oldest">oldest</string>
+    <string name="hottest">hottest</string>
+    <string name="controv">controv.</string>
+    <string name="rising">rising</string>
 </resources>
