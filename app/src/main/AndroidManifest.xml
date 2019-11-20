@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SearchResults"/>
         <activity android:name=".NewsFeed" />
+        <activity android:name=".WritePost"></activity>
         <activity android:name=".SignIn" />
         <activity android:name=".DataStatement" />
         <activity android:name=".PasswordCreation" />
