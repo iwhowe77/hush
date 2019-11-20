@@ -1,0 +1,8 @@
+{"posts": [
+  {"id": "1", "title": "Title 1", "post": "this is text for the first post title 1 blah blah",
+    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"},
+  {"id": "2", "title": "Title 2", "post": "this is text for the second post title 2 blah blah",
+    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"},
+  {"id": "3", "title": "Title 3", "post": "this is text for the third post title 3 blah blah",
+    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"}
+]}
