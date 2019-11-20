@@ -10,20 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SearchResults"/>
-        <activity android:name=".NewsFeed"></activity>
+        <activity android:name=".NewsFeed">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".SignIn" />
         <activity android:name=".DataStatement" />
+        <activity android:name=".PostView" />
         <activity android:name=".PasswordCreation" />
         <activity android:name=".OptionalInfo" />
         <activity android:name=".EmailAddress" />
         <activity android:name=".VerificationCode" />
         <activity android:name=".UsernameGeneration" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
