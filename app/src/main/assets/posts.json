@@ -1,8 +1,8 @@
 {"posts": [
-  {"id": "1", "title": "Title 1", "post": "this is text for the first post title 1 blah blah",
-    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"},
-  {"id": "2", "title": "Title 2", "post": "this is text for the second post title 2 blah blah",
-    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"},
-  {"id": "3", "title": "Title 3", "post": "this is text for the third post title 3 blah blah",
-    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"}
+  {"id": "1", "title": "Spring 2020 Sanity Check", "post": "I'm taking CS 374, CS 241, CS 242, and CS 126 next semester. I also plan to work 20hrs/wk. Is this courseload too much?",
+    "time": "2 hours ago", "likes": "4", "comments":"22"},
+  {"id": "2", "title": "Should I take CS 411 or CS 465 for my tech elec?", "post": "Need to fulfill my tech electives but I'm not quite sure which of these classes I should go for. Thoughts?",
+    "time": "Yesterday", "likes": "4", "comments":"2"},
+  {"id": "3", "title": "What's the easiest course you've taken?", "post": "I got to fill 18 credit hours next semester so I want to make my life as easy as possible!",
+    "time": "Yesterday", "likes": "4", "comments":"2"}
 ]}
