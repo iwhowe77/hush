@@ -39,6 +39,14 @@ public class NewsFeed extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_newsfeed);
 
+        RelativeLayout home_btn = findViewById(R.id.home_button);
+        home_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(NewsFeed.this, NewsFeed.class));
+            }
+        });
+
         RelativeLayout write_btn = findViewById(R.id.write_button);
         write_btn.setOnClickListener(new View.OnClickListener() {
             @Override

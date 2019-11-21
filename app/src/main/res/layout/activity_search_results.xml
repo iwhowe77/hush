@@ -115,6 +115,8 @@
         android:layout_alignParentBottom="true"
         android:background="#564CF5">
         <RelativeLayout
+            android:clickable="true"
+            android:id="@+id/home_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -123,10 +125,12 @@
                 android:layout_centerInParent="true"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:background="@drawable/ic_black_home_24px"
+                android:background="@drawable/ic_home_24px"
                 />
         </RelativeLayout>
         <RelativeLayout
+            android:clickable="true"
+            android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -135,10 +139,12 @@
                 android:layout_centerInParent="true"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:background="@drawable/ic_white_search_24px"
+                android:background="@drawable/ic_search_24px"
                 />
         </RelativeLayout>
         <RelativeLayout
+            android:clickable="true"
+            android:id="@+id/profile_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -151,6 +157,8 @@
                 />
         </RelativeLayout>
         <RelativeLayout
+            android:clickable="true"
+            android:id="@+id/write_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
