@@ -60,7 +60,7 @@
         android:layout_marginLeft="18dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="37dp"
-        android:background="@drawable/oval_current"
+        android:background="@drawable/oval"
         />
 
     <View
@@ -71,7 +71,7 @@
         android:layout_marginLeft="18dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="37dp"
-        android:background="@drawable/oval"
+        android:background="@drawable/oval_current"
         />
 
     <TextView
