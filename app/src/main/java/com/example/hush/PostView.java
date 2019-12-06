@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -66,6 +68,16 @@ public class PostView extends AppCompatActivity {
             }
         });
 
+        FloatingActionButton write_btn = findViewById(R.id.write_button);
+        write_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PostView.this, WriteComment.class);
+                intent.putExtra("id", id);
+                startActivity(intent);
+            }
+        });
+
         reloadCommentList();
     }
 
@@ -74,6 +86,7 @@ public class PostView extends AppCompatActivity {
         super.onResume();
         reloadCommentList();
     }
+
 
     protected void reloadCommentList(){
         listPosts = findViewById(R.id.list_view);

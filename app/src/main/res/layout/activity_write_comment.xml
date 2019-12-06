@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_alignParentTop="true"
+    android:background="@color/white"
+    tools:context=".WriteComment">
+
+    <TextView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:background="@color/colorPrimary"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="@string/write_comment"
+        android:textAppearance="@style/write_post"
+
+        />
+
+    <Button
+        android:id="@+id/back_white_"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/back_white_"
+        android:textColor="#FFFFFF"></Button>
+
+    <Button
+        android:id="@+id/publish"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:text="publish"
+        android:background="@drawable/rounded_button_inactive"
+        android:textColor="#FFFFFF"></Button>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <EditText
+            android:layout_marginTop="91dp"
+
+            android:id="@+id/body"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:gravity="top"
+            android:hint="Add a comment"
+            android:textAppearance="@style/add_a_post_"
+            android:textColorHint="#838383">
+        </EditText>
+
+        <!--        <EditText-->
+        <!--            android:id="@+id/body"-->
+        <!--            android:layout_width=""-->
+        <!--            android:layout_height="">-->
+
+        <!--        </EditText>-->
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:orientation="horizontal">-->
+
+        <!--            <Button-->
+        <!--                android:layout_width=""-->
+        <!--                android:layout_height="">-->
+
+        <!--            </Button>-->
+        <!--            <Button-->
+        <!--                android:layout_width=""-->
+        <!--                android:layout_height="">-->
+
+        <!--            </Button>-->
+        <!--        </LinearLayout>-->
+
+    </LinearLayout>
+</RelativeLayout>
