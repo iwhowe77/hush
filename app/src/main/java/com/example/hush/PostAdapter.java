@@ -82,10 +82,5 @@ public class PostAdapter extends BaseAdapter {
 
 class ListPostViewHolder{
     ImageView galleryImage;
-<<<<<<< HEAD
-    TextView title, likes, comments, time, details;
-
-=======
     TextView title, likes, dislikes, comments, time, details;
->>>>>>> 60f0969f1fb7b1a37777a8d8030fc5bd00b8647a
 }
