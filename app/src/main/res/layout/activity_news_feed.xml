@@ -48,6 +48,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentRight="true"
+                android:inputType="text"
+                android:imeOptions="actionNext"
                 android:maxLines="1"
                 android:hint="Search for posts, tags, or keywords" />
         </RelativeLayout>
