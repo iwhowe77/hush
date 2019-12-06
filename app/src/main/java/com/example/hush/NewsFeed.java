@@ -6,10 +6,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -53,6 +56,20 @@ public class NewsFeed extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(NewsFeed.this, WritePost.class));
+            }
+        });
+
+        final EditText searchbox = findViewById(R.id.search_box);
+        searchbox.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Perform action on key press
+                    Toast.makeText(NewsFeed.this, searchbox.getText(), Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+                return false;
             }
         });
 
