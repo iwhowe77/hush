@@ -41,4 +41,10 @@
     <string-array name="majors_array">
         <item>Accountancy</item> <item>Advertising</item> <item>Anthropology</item> <item>Arabic</item> <item>Architecture</item> <item>Art</item> <item>Art--Design</item> <item>Art--Education</item> <item>Art--Foundation</item> <item>Art--History</item> <item>Art--Studio</item> <item>Astronomy</item> <item>Basque</item> <item>Biochemistry</item> <item>Bioengineering</item> <item>Biology</item> <item>Biophysics</item> <item>Bosnian-Croatian-Serbian</item> <item>Bulgarian</item> <item>Business</item> <item>Catalan</item> <item>Chemistry</item> <item>Chinese</item> <item>Communication</item> <item>Czech</item> <item>Dance</item> <item>Economics</item> <item>Education</item> <item>Engineering</item> <item>English</item> <item>Entomology</item> <item>Finance</item> <item>French</item> <item>Geography</item> <item>Geology</item> <item>German</item> <item>Germanic</item> <item>Greek</item> <item>Hindi</item> <item>History</item> <item>Horticulture</item> <item>Informatics</item> <item>Italian</item> <item>Japanese</item> <item>Journalism</item> <item>Kinesiology</item> <item>Korean</item> <item>Latin</item> <item>Law</item> <item>Lingala</item> <item>Linguistics</item> <item>Mathematics</item> <item>Media</item> <item>Microbiology</item> <item>Music</item> <item>Neuroscience</item> <item>Pathobiology</item> <item>Persian</item> <item>Philosophy</item> <item>Physics</item> <item>Polish</item> <item>Portuguese</item> <item>Psychology</item> <item>Religion</item> <item>Russian</item> <item>Sanskrit</item> <item>Scandinavian</item> <item>Slavic</item> <item>Sociology</item> <item>Spanish</item> <item>Statistics</item> <item>Swahili</item> <item>Theatre</item> <item>Turkish</item> <item>Ukrainian</item> <item>Wolof</item> <item>Yiddish</item> <item>Zulu</item>
     </string-array>
+    <string-array name="sorting_options">
+        <item>Newest</item>
+        <item>Oldest</item>
+        <item>Hottest</item>
+        <item>Controversial</item>
+    </string-array>
 </resources>

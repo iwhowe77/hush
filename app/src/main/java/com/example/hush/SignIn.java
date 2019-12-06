@@ -24,6 +24,13 @@ public class SignIn extends AppCompatActivity {
             }
         });
 
+        Button backButton = (Button) findViewById(R.id.back_white_);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 }
