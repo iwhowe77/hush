@@ -6,4 +6,8 @@
     android:background="#564CF5"
     android:gravity="center"
     android:textColor="#ffffffff"
-    android:textSize="18dp"></TextView>
+    android:textSize="18dp"
+    android:layout_weight="1"
+    android:ellipsize="none"
+    android:maxLines="100"
+    android:scrollHorizontally="false"></TextView>

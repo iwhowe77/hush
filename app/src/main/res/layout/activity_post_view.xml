@@ -120,13 +120,14 @@
 
         <ListView
             android:id="@+id/list_view"
+            android:padding="8dp"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_below="@id/post"
             android:layout_alignParentBottom="true"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="0dp"
-            android:divider="#ffffffff"
+            android:divider="#00ffffff"
             android:dividerHeight="10.0sp">
 
         </ListView>

@@ -88,9 +88,9 @@
 
 
     <Spinner
-
         android:id="@+id/major"
         android:layout_width="260dp"
+        android:dropDownWidth="260dp"
         android:layout_height="40dp"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
@@ -100,7 +100,8 @@
         android:textColorHint="#ffffff"
         android:background="@drawable/enter_email"
         android:gravity="center"
-        android:hint="Major"></Spinner>
+        android:hint="Major"
+        android:spinnerMode="dialog"></Spinner>
 
     <Spinner
         android:id="@+id/grad_year"
@@ -113,7 +114,8 @@
         android:textColorHint="#ffffff"
         android:background="@drawable/enter_email"
         android:gravity="center"
-        android:hint="Graduation Year"></Spinner>
+        android:hint="Graduation Year"
+        android:spinnerMode="dialog"></Spinner>
     <Spinner
         android:id="@+id/gpa"
         android:layout_width="260dp"
@@ -125,7 +127,8 @@
         android:textColorHint="#ffffff"
         android:background="@drawable/enter_email"
         android:gravity="center"
-        android:hint="GPA"></Spinner>
+        android:hint="GPA"
+        android:spinnerMode="dialog"></Spinner>
 
     <EditText
         android:id="@+id/classes_taken"

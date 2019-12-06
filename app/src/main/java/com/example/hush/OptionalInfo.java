@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class OptionalInfo extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,5 +91,6 @@ public class OptionalInfo extends AppCompatActivity {
         GPA_adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
         GPA.setAdapter(GPA_adapter);
     }
-    
+
+
 }
