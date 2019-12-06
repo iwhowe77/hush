@@ -34,12 +34,12 @@
             android:textColor="#FFFFFF"></Button>
 
     </RelativeLayout>
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_below="@id/post_view_bar"
-        android:layout_above="@id/tab_bar"
+        android:layout_alignParentBottom="true"
         android:background="#E5E5E5">
         <RelativeLayout
             android:id="@+id/post"
@@ -78,73 +78,26 @@
                 android:layout_alignParentRight="true"
                 android:gravity="center"
                 android:text="@string/tags"/>
+
         </RelativeLayout>
+
         <ListView
+            android:id="@+id/list_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_below="@id/post"
             android:layout_alignParentBottom="true"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="0dp"
             android:divider="#ffffffff"
             android:dividerHeight="10.0sp">
 
         </ListView>
 
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/tab_bar"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
-        android:background="#564CF5">
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_centerInParent="true"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_black_home_24px"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_centerInParent="true"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_search_24px"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_centerInParent="true"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_person_24px"
-                />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_weight="1">
-            <ImageView
-                android:layout_centerInParent="true"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/ic_post_add_24px"
-                />
-        </RelativeLayout>
-    </LinearLayout>
+
+
+    </RelativeLayout>
+
 
     <!-- drawable/rectangle.xml -->
 
