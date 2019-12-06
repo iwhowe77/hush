@@ -15,6 +15,8 @@ public class PasswordCreation extends AppCompatActivity {
         setContentView(R.layout.activity_password_creation);
 
         final Button button = findViewById(R.id.next);
+
+        //'next' button
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

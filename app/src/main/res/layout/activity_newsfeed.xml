@@ -87,7 +87,7 @@
             android:layout_height="0dp"
             android:layout_below="@id/sort_bar"
             android:layout_alignParentBottom="true"
-            android:divider="#ffffffff"
+            android:divider="#00ffffff"
             android:dividerHeight="10.0sp">
 
         </ListView>
