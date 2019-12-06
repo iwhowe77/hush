@@ -159,6 +159,7 @@ public class NewsFeed extends AppCompatActivity {
                 String post = jo_inside.getString("post");
                 String time = jo_inside.getString("time");
                 String likes = jo_inside.getString("likes");
+                String dislikes = jo_inside.getString("dislikes");
                 String comments = jo_inside.getString("comments");
 
                 //Check for search query
@@ -183,6 +184,7 @@ public class NewsFeed extends AppCompatActivity {
                 m_li.put("post", post);
                 m_li.put("time", time);
                 m_li.put("likes", likes);
+                m_li.put("dislikes", dislikes);
                 m_li.put("comments", comments);
 
 
@@ -227,6 +229,7 @@ public class NewsFeed extends AppCompatActivity {
                 String post = jo_inside.getString("post");
                 String time = jo_inside.getString("time");
                 String likes = jo_inside.getString("likes");
+                String dislikes = jo_inside.getString("dislikes");
                 String comments = jo_inside.getString("comments");
 
                 //Add your values in your `ArrayList` as below:
@@ -236,6 +239,7 @@ public class NewsFeed extends AppCompatActivity {
                 m_li.put("post", post);
                 m_li.put("time", time);
                 m_li.put("likes", likes);
+                m_li.put("dislikes", dislikes);
                 m_li.put("comments", comments);
 
 
@@ -253,6 +257,7 @@ public class NewsFeed extends AppCompatActivity {
                         i.putExtra("post", formList.get(+position).get(KEY_POST));
                         i.putExtra("time", formList.get(+position).get(KEY_TIME));
                         i.putExtra("likes", formList.get(+position).get(KEY_LIKES));
+                        i.putExtra("dislikes", formList.get(+position).get("dislikes"));
                         i.putExtra("comments", formList.get(+position).get(KEY_COMMENTS));
                         startActivity(i);
                     }

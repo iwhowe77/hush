@@ -39,6 +39,7 @@ public class PostAdapter extends BaseAdapter {
             holder.details = (TextView) convertView.findViewById(R.id.details);
             holder.time = (TextView) convertView.findViewById(R.id.time);
             holder.likes = (TextView) convertView.findViewById(R.id.likes);
+            holder.dislikes = (TextView) convertView.findViewById(R.id.dislikes);
             holder.comments = (TextView) convertView.findViewById(R.id.comments);
             convertView.setTag(holder);
         } else {
@@ -49,6 +50,7 @@ public class PostAdapter extends BaseAdapter {
         holder.details.setId(position);
         holder.time.setId(position);
         holder.likes.setId(position);
+        holder.dislikes.setId(position);
         holder.comments.setId(position);
 
         HashMap<String, String> song = new HashMap<String, String>();
@@ -59,6 +61,7 @@ public class PostAdapter extends BaseAdapter {
             holder.time.setText(song.get(NewsFeed.KEY_TIME));
             holder.details.setText(song.get(NewsFeed.KEY_POST));
             holder.likes.setText(song.get(NewsFeed.KEY_LIKES) + " Likes");
+            holder.dislikes.setText(song.get("dislikes") + " Dislikes");
             holder.comments.setText(song.get(NewsFeed.KEY_COMMENTS) + " Comments");
 
 //            if(song.get(MainActivity.KEY_URLTOIMAGE).toString().length() < 5)
@@ -78,5 +81,5 @@ public class PostAdapter extends BaseAdapter {
 
 class ListPostViewHolder {
     ImageView galleryImage;
-    TextView title, likes, comments, time, details;
+    TextView title, likes, dislikes, comments, time, details;
 }
