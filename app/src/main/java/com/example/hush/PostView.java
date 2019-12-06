@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class PostView extends AppCompatActivity {
@@ -36,6 +38,14 @@ public class PostView extends AppCompatActivity {
         titleTV.setText(title);
         postTV.setText((post));
         timeTV.setText(time);
+
+        Button backButton = (Button) findViewById(R.id.back_white_);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
 
     }
