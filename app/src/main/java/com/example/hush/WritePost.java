@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,9 +15,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 
 public class WritePost extends AppCompatActivity {
 
@@ -45,6 +51,7 @@ public class WritePost extends AppCompatActivity {
                     JSONArray posts_array = obj.getJSONArray("posts");
 
                     JSONObject new_entry = new JSONObject();
+                    JSONObject emptyComments = new JSONObject();
                     //{"id": "1", "title": "Title 1", "post": "this is text for the first post title 1 blah blah",
                     //    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"}
                     new_entry.put("id",  Integer.toString(posts_array.length() + 2));
@@ -53,6 +60,7 @@ public class WritePost extends AppCompatActivity {
                     new_entry.put("time", "2014-03-12T13:37:27+00:00");
                     new_entry.put("likes", "0");
                     new_entry.put("comments", "0");
+                    new_entry.put("comments_list", emptyComments);
 
                     posts_array.put(new_entry);
 
@@ -91,25 +99,66 @@ public class WritePost extends AppCompatActivity {
     }
 
     public String loadJSONFromAsset(Context context) {
+
+        File file = new File(context.getFilesDir(), "posts.json");
+
         String json = null;
-        try {
-            InputStream is = context.getAssets().open("posts.json");
+        if(file.exists()) {
+            // use the config.
+            InputStream inputStream = null;
+            try {
+                inputStream = openFileInput("posts.json");
 
-            int size = is.available();
+                if ( inputStream != null ) {
+                    InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                    BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                    String receiveString = "";
+                    StringBuilder stringBuilder = new StringBuilder();
 
-            byte[] buffer = new byte[size];
+                    while ( (receiveString = bufferedReader.readLine()) != null ) {
+                        stringBuilder.append(receiveString);
+                    }
 
-            is.read(buffer);
+                    json = stringBuilder.toString();
+                }
+            }
+            catch (FileNotFoundException e) {
+                Log.e("login activity", "File not found: " + e.toString());
+            } catch (IOException e) {
+                Log.e("login activity", "Can not read file: " + e.toString());
+            }
+            finally {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
 
-            is.close();
+        } else {
+            // use the config from asset.
+            try {
+                InputStream is = context.getAssets().open("posts.json");
 
-            json = new String(buffer, "UTF-8");
+                int size = is.available();
+
+                byte[] buffer = new byte[size];
+
+                is.read(buffer);
+
+                is.close();
+
+                json = new String(buffer, "UTF-8");
 
 
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
+            } catch (IOException ex) {
+                ex.printStackTrace();
+                return null;
+            }
         }
+
+
+
         return json;
 
     }
