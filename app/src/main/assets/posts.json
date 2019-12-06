@@ -1,8 +1,90 @@
-{"posts": [
-  {"id": "1", "title": "Spring 2020 Sanity Check", "post": "I'm taking CS 374, CS 241, CS 242, and CS 126 next semester. I also plan to work 20hrs/wk. Is this courseload too much?",
-    "time": "2 hours ago", "likes": "4", "comments":"22"},
-  {"id": "2", "title": "Should I take CS 411 or CS 465 for my tech elec?", "post": "Need to fulfill my tech electives but I'm not quite sure which of these classes I should go for. Thoughts?",
-    "time": "Yesterday", "likes": "4", "comments":"2"},
-  {"id": "3", "title": "What's the easiest course you've taken?", "post": "I got to fill 18 credit hours next semester so I want to make my life as easy as possible!",
-    "time": "Yesterday", "likes": "4", "comments":"2"}
-]}
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "Spring 2020 Sanity Check",
+      "post": "I'm taking CS 374, CS 241, CS 242, and CS 126 next semester. I also plan to work 20hrs/wk. Is this courseload too much?",
+      "time": "CHANGE ME",
+      "likes": "4",
+      "comments": "3",
+      "comments_list": [
+        {
+          "text": "...You're joking, right? I've never seen a more crazy courseload in my life",
+          "time": "CHANGE ME",
+          "likes": "7",
+          "dislikes": "2",
+          "user": "dangerZone"
+        },
+        {
+          "text": "lol, gl",
+          "time": "CHANGE ME",
+          "likes": "1",
+          "dislikes": "1",
+          "user": "JonBovi"
+        },
+        {
+          "text": "do you have an ability to do HW while at work??",
+          "time": "CHANGE ME",
+          "likes": "1",
+          "dislikes": "0",
+          "user": "WhipCreamIsASauce"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "title": "Should I take CS 411 or CS 465 for my tech elec?",
+      "post": "Need to fulfill my tech electives but I'm not quite sure which of these classes I should go for. Thoughts?",
+      "time": "CHANGE ME",
+      "likes": "4",
+      "comments": "2",
+      "comments_list": [
+        {
+          "text": "UI Design is a lot different from other courses in CS, you learn a lot about how human brains work in relation to User Interfaces.",
+          "time": "CHANGE ME",
+          "likes": "7",
+          "dislikes": "0",
+          "user": "suhhhDude"
+        },
+        {
+          "text": "I <3 Abdu, CS 411 all the way!",
+          "time": "CHANGE ME",
+          "likes": "4",
+          "dislikes": "1",
+          "user": "iMissKAMS"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "What's the easiest course you've taken?",
+      "post": "I got to fill 18 credit hours next semester so I want to make my life as easy as possible!",
+      "time": "CHANGE ME",
+      "likes": "4",
+      "comments": "3",
+      "comments_list": [
+        {
+          "text": "STATS 100: GET KARLE, SHE IS SO KIND AND FUNNY AND RELATABLE. LOOOOTS OF EXTRA CREDIT SO ITS VERY EASY TO GET AN A IN THE CLASS",
+          "time": "CHANGE ME",
+          "likes": "7",
+          "dislikes": "2",
+          "user": "ILOVEALLCAPS"
+        },
+        {
+          "text": "AAS 297/SOCW 297: Bruh... legit its a breeze. legit just group discussion and u get an A. It fulfills Cultural Studies and Social & Behavioral Sciences.",
+          "time": "CHANGE ME",
+          "likes": "4",
+          "dislikes": "1",
+          "user": "Every Night All Nighter"
+        },
+        {
+          "text": "CLCV 115 is super easy, if you just memorize the study guide and do all the assignments you're pretty much guaranteed an A.",
+          "time": "CHANGE ME",
+          "likes": "1",
+          "dislikes": "0",
+          "user": "ThanosDidNothingWrong"
+        }
+      ]
+    }
+  ]
+}
