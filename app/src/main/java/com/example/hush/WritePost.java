@@ -68,7 +68,8 @@ public class WritePost extends AppCompatActivity {
                         e.printStackTrace();
                     }
 
-                    startActivity(new Intent(WritePost.this, NewsFeed.class));
+                    //startActivity(new Intent(WritePost.this, NewsFeed.class));
+                    finish();
                 } catch (
                         JSONException e) {
                     e.printStackTrace();
@@ -76,6 +77,14 @@ public class WritePost extends AppCompatActivity {
 
             }
 
+        });
+
+        Button backButton = (Button) findViewById(R.id.back_white_);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
         });
 
 
