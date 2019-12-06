@@ -57,7 +57,7 @@
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             android:layout_below="@id/search_box_layout"
-            android:background="#E5E5E5">
+            android:background="#FFFFFF">
             <LinearLayout
                 android:id="@+id/sort_bar"
                 android:layout_width="match_parent"
