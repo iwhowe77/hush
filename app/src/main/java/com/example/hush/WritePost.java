@@ -59,7 +59,7 @@ public class WritePost extends AppCompatActivity {
                     JSONArray posts_array = obj.getJSONArray("posts");
 
                     JSONObject new_entry = new JSONObject();
-                    JSONObject emptyComments = new JSONObject();
+                    JSONArray emptyComments = new JSONArray();
                     //{"id": "1", "title": "Title 1", "post": "this is text for the first post title 1 blah blah",
                     //    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"}
                     new_entry.put("id",  Integer.toString(posts_array.length() + 2));
@@ -67,11 +67,15 @@ public class WritePost extends AppCompatActivity {
                     new_entry.put("post", bodyText.getText());
                     new_entry.put("time", "2014-03-12T13:37:27+00:00");
                     new_entry.put("likes", "0");
+                    new_entry.put("dislikes", "0");
                     new_entry.put("comments", "0");
                     new_entry.put("comments_list", emptyComments);
 
                     posts_array.put(new_entry);
-                    writeJSONToFile(obj);
+                    JSONObject new_obj = new JSONObject();
+                    new_obj.put("posts", posts_array);
+                    Log.d("newposts", new_obj.toString());
+                    writeJSONToFile(new_obj);
 
                     //startActivity(new Intent(WritePost.this, NewsFeed.class));
                     finish();

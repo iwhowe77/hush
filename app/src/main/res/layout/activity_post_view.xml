@@ -7,8 +7,7 @@
 
     tools:context=".PostView">
     <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/post_view_activity"
+        android:id="@+id/post_view_activity"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#FFFFFF">
@@ -41,11 +40,12 @@
             android:textColor="#FFFFFF"></Button>
 
     </RelativeLayout>
+
     <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_below="@id/post_view_bar"
+        android:layout_below="@+id/post_view_bar"
         android:layout_alignParentBottom="true"
         android:background="#E5E5E5">
         <RelativeLayout
@@ -70,6 +70,7 @@
                 android:text="@string/post_text"
                 android:textColor="#ff000000"
                 android:layout_margin="8dp"/>
+
             <TextView
                 android:id="@+id/time_stamp"
                 android:layout_width="wrap_content"
@@ -85,6 +86,35 @@
                 android:layout_alignParentRight="true"
                 android:gravity="center"
                 android:text="@string/tags"/>
+            <LinearLayout
+                android:id="@+id/like_dislike_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/time_stamp"
+                android:orientation="horizontal"
+                android:background="#ffffff"
+                android:paddingTop="20dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp">
+                <ImageButton
+                    android:id="@+id/like_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_thumb_up_24px"
+                    android:layout_gravity="center_vertical"
+                    android:background="#ffffff">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:id="@+id/dislike_button"
+                    android:paddingLeft="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_thumb_down_24px"
+                    android:layout_gravity="center_vertical"
+                    android:background="#ffffff"/>
+            </LinearLayout>
 
         </RelativeLayout>
 
