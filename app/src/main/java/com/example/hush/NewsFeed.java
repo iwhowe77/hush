@@ -96,16 +96,10 @@ public class NewsFeed extends AppCompatActivity {
                 if ((keyCode == EditorInfo.IME_ACTION_SEARCH) || ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER))) {
                     // Perform action on key press
-<<<<<<< HEAD
                     String searchbox_txt = searchbox.getText().toString();
                     Toast.makeText(NewsFeed.this, searchbox_txt, Toast.LENGTH_SHORT).show();
                     performSearch(searchbox_txt, spinner.getSelectedItem().toString());
-                    Log.d("was","sup");
 
-=======
-                    //Toast.makeText(NewsFeed.this, searchbox.getText(), Toast.LENGTH_SHORT).show();
-                    filterPostList(searchbox.getText().toString());
->>>>>>> 60f0969f1fb7b1a37777a8d8030fc5bd00b8647a
                     return true;
                 }
                 return false;
