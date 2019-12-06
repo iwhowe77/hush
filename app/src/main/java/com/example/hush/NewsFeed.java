@@ -36,8 +36,14 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.SortedSet;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 public class NewsFeed extends AppCompatActivity {
 
@@ -137,6 +143,19 @@ public class NewsFeed extends AppCompatActivity {
         return result;
     }
 
+    static <K,V extends Comparable<? super V>>
+    SortedSet<Map.Entry<K,V>> entriesSortedByValues(Map<K,V> map) {
+        SortedSet<Map.Entry<K,V>> sortedEntries = new TreeSet<Map.Entry<K,V>>(
+                new Comparator<Map.Entry<K,V>>() {
+                    @Override public int compare(Map.Entry<K,V> e1, Map.Entry<K,V> e2) {
+                        int res = e1.getValue().compareTo(e2.getValue());
+                        return res != 0 ? res : 1;
+                    }
+                }
+        );
+        sortedEntries.addAll(map.entrySet());
+        return sortedEntries;
+    }
 
 
     public void performSearch(String query, String sorting){
@@ -147,11 +166,14 @@ public class NewsFeed extends AppCompatActivity {
             final ArrayList<HashMap<String, String>> formList = new ArrayList<HashMap<String, String>>();
             HashMap<String, String> m_li;
 
-            HashMap<String, Integer> sort_id = new HashMap<>();
+            Map<Integer, String> sort_id = new TreeMap<>();
             String[] sort_arr = new String[posts_array.length()];
+            Integer[] pos_arr = new Integer[posts_array.length()];
+            List<Integer> pos_lst = new ArrayList<Integer>();
             for (int j = 0; j < posts_array.length(); j++) {
                 JSONObject jo_inside = posts_array.getJSONObject(j);
                 String sort_val = null;
+                String id = jo_inside.getString("id");
                 if(sorting.equals("Newest")){
                     sort_val = jo_inside.getString("time");
                 } else if (sorting.equals("Oldest")){
@@ -162,21 +184,35 @@ public class NewsFeed extends AppCompatActivity {
                     sort_val = jo_inside.getString("comments");
                 }
 
-                sort_id.put(sort_val, j);
-                sort_arr[j] = sort_val;
+                sort_id.put(j, sort_val);
+//                pos_arr[j] = j;
+//                sort_arr[j] = sort_val;
+            }
+            SortedSet<Map.Entry<Integer,String>> sortedset= entriesSortedByValues(sort_id);
+            Integer ct = 0;
+            for (Map.Entry<Integer , String> entry : sortedset)
+            {
+                sort_arr[ct] = entry.getValue();
+                pos_arr[ct] = entry.getKey();
+                ct += 1;
+                System.out.println(entry);
             }
 
-            Arrays.sort(sort_arr);
 
+
+//            Log.d("BEFORE SORT", Arrays.toString(sort_arr));
+//            Arrays.sort(sort_arr);
+//            Log.d("AFTER SORT", Arrays.toString(sort_arr));
             if (sorting.equals("Newest") || sorting.equals("Hottest") || sorting.equals("Controversial")) {
                 Collections.reverse(Arrays.asList(sort_arr));
+                Collections.reverse(Arrays.asList(pos_arr));
             }
 
-            for (int i = 0; i < posts_array.length(); i++) {
+            for (int i = 0; i < sort_arr.length; i++) {
                 String first_elem = sort_arr[i];
-                int JSONpos = sort_id.get(first_elem);
+                int JSONpos = pos_arr[i];
                 JSONObject jo_inside = posts_array.getJSONObject(JSONpos);
-                Log.d("Details-->", jo_inside.getString("post"));
+                Log.d("Details-->", jo_inside.toString());
                 String id = jo_inside.getString("id");
                 String title = jo_inside.getString("title");
                 String post = jo_inside.getString("post");
@@ -223,7 +259,6 @@ public class NewsFeed extends AppCompatActivity {
                     m_li.put("post", post);
                     m_li.put("time", time);
                     m_li.put("likes", likes);
-                    m_li.put("time", time);
                     m_li.put("comments", comments);
                     for (int k = 0; k < comments_list_json.length(); k++){
                         m_li.put("comments_text"+Integer.toString(k), comments_text[k]);
