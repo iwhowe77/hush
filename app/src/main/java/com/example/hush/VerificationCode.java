@@ -32,12 +32,11 @@ public class VerificationCode extends AppCompatActivity {
             }
         });
 
-        final Button back_button = findViewById(R.id.back_white_);
-        back_button.setOnClickListener(new View.OnClickListener() {
+        Button backButton = (Button) findViewById(R.id.back_white_);
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(VerificationCode.this, EmailAddress.class);
-                startActivity(intent);
+                finish();
             }
         });
 
