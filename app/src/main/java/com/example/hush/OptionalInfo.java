@@ -8,6 +8,7 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -29,6 +30,23 @@ public class OptionalInfo extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        final Button enterButton = findViewById(R.id.enter);
+
+
+        enterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText courseEditText = (EditText) findViewById(R.id.classes_taken);
+                String course = courseEditText.getText().toString() + "\n";
+                TextView classView = (TextView)findViewById(R.id.classes_list_signup);
+                String updatedCourses = classView.getText().toString() + course;
+                classView.setText(updatedCourses);
+            }
+        });
+
+
 
         Button backButton = (Button) findViewById(R.id.back_white_);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +70,7 @@ public class OptionalInfo extends AppCompatActivity {
         Spinner spinYear = findViewById(R.id.grad_year);
 
         ArrayList<String> years = new ArrayList<String>();
+        years.add("Graduation Year");
         int grad_year = Calendar.getInstance().get(Calendar.YEAR) + 5;
         for (int i = grad_year; i >= 1867; i--) {
             years.add(Integer.toString(i));
@@ -64,6 +83,7 @@ public class OptionalInfo extends AppCompatActivity {
 
         Spinner GPA = findViewById(R.id.gpa);
         ArrayList<String> GPAs = new ArrayList<String>();
+        GPAs.add("GPA");
         for (double i = 4.0; i >= 0.0; i -= 0.1) {
             GPAs.add(Double.toString(Math.round(i * 10) / 10.0));
         }
