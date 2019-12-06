@@ -11,6 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,17 +46,9 @@ public class NewsFeed extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newsfeed);
+        setContentView(R.layout.activity_news_feed);
 
-        RelativeLayout home_btn = findViewById(R.id.home_button);
-        home_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(NewsFeed.this, NewsFeed.class));
-            }
-        });
-
-        RelativeLayout write_btn = findViewById(R.id.write_button);
+        FloatingActionButton write_btn = findViewById(R.id.write_button);
         write_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,13 +56,6 @@ public class NewsFeed extends AppCompatActivity {
             }
         });
 
-        RelativeLayout search_btn = findViewById(R.id.search_button);
-        search_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(NewsFeed.this, SearchResults.class));
-            }
-        });
 
         reloadPostList();
 
