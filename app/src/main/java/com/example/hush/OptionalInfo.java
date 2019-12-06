@@ -4,8 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
+import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Calendar;
 
 public class OptionalInfo extends AppCompatActivity {
 
@@ -30,6 +37,39 @@ public class OptionalInfo extends AppCompatActivity {
                 finish();
             }
         });
+
+        ((TextView)findViewById(R.id.classes_list_signup)).setMovementMethod(new ScrollingMovementMethod());
+
+        Spinner spinner = findViewById(R.id.major);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.custom_spinner,
+                                                getResources().getStringArray(R.array.majors_array)
+        );
+        adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
+        spinner.setAdapter(adapter);
+
+
+        Spinner spinYear = findViewById(R.id.grad_year);
+
+        ArrayList<String> years = new ArrayList<String>();
+        int grad_year = Calendar.getInstance().get(Calendar.YEAR) + 5;
+        for (int i = grad_year; i >= 1867; i--) {
+            years.add(Integer.toString(i));
+        }
+        ArrayAdapter<String> year_adapter = new ArrayAdapter<String>(this, R.layout.custom_spinner, years);
+
+        year_adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
+        spinYear.setAdapter(year_adapter);
+
+
+        Spinner GPA = findViewById(R.id.gpa);
+        ArrayList<String> GPAs = new ArrayList<String>();
+        for (double i = 4.0; i >= 0.0; i -= 0.1) {
+            GPAs.add(Double.toString(Math.round(i * 10) / 10.0));
+        }
+        ArrayAdapter<String> GPA_adapter = new ArrayAdapter<String>(this, R.layout.custom_spinner, GPAs);
+        GPA_adapter.setDropDownViewResource(R.layout.custom_spinner_dropdown);
+        GPA.setAdapter(GPA_adapter);
     }
     
 }
