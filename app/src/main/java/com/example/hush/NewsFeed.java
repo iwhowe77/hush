@@ -96,11 +96,16 @@ public class NewsFeed extends AppCompatActivity {
                 if ((keyCode == EditorInfo.IME_ACTION_SEARCH) || ((event.getAction() == KeyEvent.ACTION_DOWN) &&
                         (keyCode == KeyEvent.KEYCODE_ENTER))) {
                     // Perform action on key press
+<<<<<<< HEAD
                     String searchbox_txt = searchbox.getText().toString();
                     Toast.makeText(NewsFeed.this, searchbox_txt, Toast.LENGTH_SHORT).show();
                     performSearch(searchbox_txt, spinner.getSelectedItem().toString());
                     Log.d("was","sup");
 
+=======
+                    //Toast.makeText(NewsFeed.this, searchbox.getText(), Toast.LENGTH_SHORT).show();
+                    filterPostList(searchbox.getText().toString());
+>>>>>>> 60f0969f1fb7b1a37777a8d8030fc5bd00b8647a
                     return true;
                 }
                 return false;
@@ -321,11 +326,76 @@ public class NewsFeed extends AppCompatActivity {
                 return null;
             }
         }
-
-
-
         return json;
+    }
 
+    protected void filterPostList(String query){
+        listPosts = findViewById(R.id.list_view);
+        try {
+            JSONObject obj = new JSONObject(loadJSONFromAsset(getApplicationContext()));
+            JSONArray posts_array = obj.getJSONArray("posts");
+            final ArrayList<HashMap<String, String>> formList = new ArrayList<HashMap<String, String>>();
+            HashMap<String, String> m_li;
+
+            for (int i = 0; i < posts_array.length(); i++) {
+                JSONObject jo_inside = posts_array.getJSONObject(i);
+                Log.d("Details-->", jo_inside.getString("post"));
+                String id = jo_inside.getString("id");
+                String title = jo_inside.getString("title");
+                String post = jo_inside.getString("post");
+                String time = jo_inside.getString("time");
+                String likes = jo_inside.getString("likes");
+                String dislikes = jo_inside.getString("dislikes");
+                String comments = jo_inside.getString("comments");
+
+                //Check for search query
+                String[] words = query.split(" ");
+                boolean searchFound = false;
+                for (String ss : words) {
+                    if(title.contains(ss)) {
+                        searchFound = true;
+                    }
+                    else if(post.contains(ss)) {
+                        searchFound = true;
+                    }
+                }
+                if(!searchFound) {
+                    continue;
+                }
+
+                //Add your values in your `ArrayList` as below:
+                m_li = new HashMap<String, String>();
+                m_li.put("id", id);
+                m_li.put("title", title);
+                m_li.put("post", post);
+                m_li.put("time", time);
+                m_li.put("likes", likes);
+                m_li.put("dislikes", dislikes);
+                m_li.put("comments", comments);
+
+
+                formList.add(m_li);
+
+                PostAdapter adapter = new PostAdapter(NewsFeed.this, formList);
+                listPosts.setAdapter(adapter);
+
+                listPosts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    public void onItemClick(AdapterView<?> parent, View view,
+                                            int position, long id) {
+                        Intent i = new Intent(NewsFeed.this, PostView.class);
+                        i.putExtra("id", formList.get(+position).get(KEY_ID));
+                        i.putExtra("title", formList.get(+position).get(KEY_TITLE));
+                        i.putExtra("post", formList.get(+position).get(KEY_POST));
+                        i.putExtra("time", formList.get(+position).get(KEY_TIME));
+                        i.putExtra("likes", formList.get(+position).get(KEY_LIKES));
+                        i.putExtra("comments", formList.get(+position).get(KEY_COMMENTS));
+                        startActivity(i);
+                    }
+                });
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -345,6 +415,7 @@ public class NewsFeed extends AppCompatActivity {
                 String post = jo_inside.getString("post");
                 String time = jo_inside.getString("time");
                 String likes = jo_inside.getString("likes");
+                String dislikes = jo_inside.getString("dislikes");
                 String comments = jo_inside.getString("comments");
 
                 //Add your values in your `ArrayList` as below:
@@ -354,6 +425,7 @@ public class NewsFeed extends AppCompatActivity {
                 m_li.put("post", post);
                 m_li.put("time", time);
                 m_li.put("likes", likes);
+                m_li.put("dislikes", dislikes);
                 m_li.put("comments", comments);
 
 
@@ -371,6 +443,7 @@ public class NewsFeed extends AppCompatActivity {
                         i.putExtra("post", formList.get(+position).get(KEY_POST));
                         i.putExtra("time", formList.get(+position).get(KEY_TIME));
                         i.putExtra("likes", formList.get(+position).get(KEY_LIKES));
+                        i.putExtra("dislikes", formList.get(+position).get("dislikes"));
                         i.putExtra("comments", formList.get(+position).get(KEY_COMMENTS));
                         startActivity(i);
                     }

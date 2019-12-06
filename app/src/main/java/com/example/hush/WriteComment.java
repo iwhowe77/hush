@@ -23,18 +23,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.sql.Time;
 
-public class WritePost extends AppCompatActivity {
+public class WriteComment extends AppCompatActivity {
 
-    EditText titleText;
-    EditText bodyText;
-    EditText tagText;
-
+    EditText textText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_write_post);
+        setContentView(R.layout.activity_write_comment);
 
         Button backButton = (Button) findViewById(R.id.back_white_);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -49,28 +47,44 @@ public class WritePost extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                titleText = findViewById(R.id.add_a_title);
-                bodyText = findViewById(R.id.body);
-                tagText = findViewById(R.id.tags);
+                textText = findViewById(R.id.body);
+                Intent intent = getIntent();
+                String id = intent.getStringExtra("id");
 
 
                 try {
+
+
                     JSONObject obj = loadJSONObj(getApplicationContext());
                     JSONArray posts_array = obj.getJSONArray("posts");
 
+                    JSONObject relevantPost = null;
+                    for (int i = 0; i < posts_array.length(); i++) {
+                        JSONObject newPost = posts_array.getJSONObject(i);
+                        //Log.d("Details-->", relevantPost.getString("post"));
+
+                        if (id.equals(newPost.getString("id"))) {
+                            relevantPost = newPost;
+                            break;
+                        }
+                    }
+
+                    if(relevantPost == null){
+                        return;
+                    }
+
                     JSONObject new_entry = new JSONObject();
-                    JSONObject emptyComments = new JSONObject();
                     //{"id": "1", "title": "Title 1", "post": "this is text for the first post title 1 blah blah",
                     //    "time": "2014-03-12T13:37:27+00:00", "likes": "4", "comments":"2"}
-                    new_entry.put("id",  Integer.toString(posts_array.length() + 2));
-                    new_entry.put("title", titleText.getText());
-                    new_entry.put("post", bodyText.getText());
+
+                    new_entry.put("text", textText.getText());
                     new_entry.put("time", "2014-03-12T13:37:27+00:00");
                     new_entry.put("likes", "0");
-                    new_entry.put("comments", "0");
-                    new_entry.put("comments_list", emptyComments);
+                    new_entry.put("dislikes", "0");
+                    new_entry.put("user", "Anon");
 
-                    posts_array.put(new_entry);
+                    JSONArray comments_list = relevantPost.getJSONArray("comments_list");
+                    comments_list.put(new_entry);
                     writeJSONToFile(obj);
 
                     //startActivity(new Intent(WritePost.this, NewsFeed.class));
