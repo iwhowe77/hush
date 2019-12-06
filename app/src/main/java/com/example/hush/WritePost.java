@@ -36,6 +36,14 @@ public class WritePost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_post);
 
+        Button backButton = (Button) findViewById(R.id.back_white_);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         Button publish_btn = findViewById(R.id.publish);
         publish_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +55,7 @@ public class WritePost extends AppCompatActivity {
 
 
                 try {
-                    JSONObject obj = new JSONObject(loadJSONFromAsset(getApplicationContext()));
+                    JSONObject obj = loadJSONObj(getApplicationContext());
                     JSONArray posts_array = obj.getJSONArray("posts");
 
                     JSONObject new_entry = new JSONObject();
@@ -63,18 +71,7 @@ public class WritePost extends AppCompatActivity {
                     new_entry.put("comments_list", emptyComments);
 
                     posts_array.put(new_entry);
-
-                    String filename = "posts.json";
-                    String fileContents = "post content..";
-                    FileOutputStream outputStream;
-
-                    try {
-                        outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
-                        outputStream.write(obj.toString().getBytes());
-                        outputStream.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    writeJSONToFile(obj);
 
                     //startActivity(new Intent(WritePost.this, NewsFeed.class));
                     finish();
@@ -86,20 +83,25 @@ public class WritePost extends AppCompatActivity {
             }
 
         });
-
-        Button backButton = (Button) findViewById(R.id.back_white_);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-
-
     }
 
-    public String loadJSONFromAsset(Context context) {
+    public boolean writeJSONToFile(JSONObject obj){
+        String filename = "posts.json";
+        String fileContents = "post content..";
+        FileOutputStream outputStream;
 
+        try {
+            outputStream = openFileOutput(filename, Context.MODE_PRIVATE);
+            outputStream.write(obj.toString().getBytes());
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+        return true;
+    }
+
+    public JSONObject loadJSONObj(Context context) {
         File file = new File(context.getFilesDir(), "posts.json");
 
         String json = null;
@@ -157,9 +159,17 @@ public class WritePost extends AppCompatActivity {
             }
         }
 
+        try {
+            JSONObject retObj = new JSONObject(json);
+            return retObj;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
 
 
-        return json;
+
+
 
     }
 }

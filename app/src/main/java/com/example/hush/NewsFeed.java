@@ -140,11 +140,7 @@ public class NewsFeed extends AppCompatActivity {
                 return null;
             }
         }
-
-
-
         return json;
-
     }
 
     protected void filterPostList(String query){
