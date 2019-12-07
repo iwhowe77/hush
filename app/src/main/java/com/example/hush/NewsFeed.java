@@ -53,6 +53,7 @@ public class NewsFeed extends AppCompatActivity {
     static final String KEY_POST = "post";
     static final String KEY_TIME = "time";
     static final String KEY_LIKES = "likes";
+    static final String KEY_DISLIKES = "dislikes";
     static final String KEY_COMMENTS = "comments";
 
 
@@ -218,6 +219,7 @@ public class NewsFeed extends AppCompatActivity {
                 String post = jo_inside.getString("post");
                 String time = jo_inside.getString("time");
                 String likes = jo_inside.getString("likes");
+                String dislikes = jo_inside.getString("dislikes");
                 String comments = jo_inside.getString("comments");
 
                 JSONArray comments_list_json = jo_inside.getJSONArray("comments_list");
@@ -259,6 +261,8 @@ public class NewsFeed extends AppCompatActivity {
                     m_li.put("post", post);
                     m_li.put("time", time);
                     m_li.put("likes", likes);
+                    m_li.put("dislikes", dislikes);
+
                     m_li.put("comments", comments);
                     for (int k = 0; k < comments_list_json.length(); k++){
                         m_li.put("comments_text"+Integer.toString(k), comments_text[k]);
@@ -285,6 +289,7 @@ public class NewsFeed extends AppCompatActivity {
                             i.putExtra("post", formList.get(+position).get(KEY_POST));
                             i.putExtra("time", formList.get(+position).get(KEY_TIME));
                             i.putExtra("likes", formList.get(+position).get(KEY_LIKES));
+                            i.putExtra("dislikes", formList.get(+position).get(KEY_DISLIKES));
                             i.putExtra("comments", formList.get(+position).get(KEY_COMMENTS));
 
                             startActivity(i);

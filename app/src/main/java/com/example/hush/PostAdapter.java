@@ -2,10 +2,12 @@ package com.example.hush;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +37,8 @@ public class PostAdapter extends BaseAdapter {
             holder = new ListPostViewHolder();
             convertView = LayoutInflater.from(activity).inflate(
                     R.layout.post, parent, false);
+
+
             holder.galleryImage = (ImageView) convertView.findViewById(R.id.galleryImage);
             holder.title = (TextView) convertView.findViewById(R.id.title);
             holder.details = (TextView) convertView.findViewById(R.id.details);
@@ -46,6 +50,9 @@ public class PostAdapter extends BaseAdapter {
         } else {
             holder = (ListPostViewHolder) convertView.getTag();
         }
+
+
+
         holder.galleryImage.setId(position);
         holder.title.setId(position);
         holder.details.setId(position);

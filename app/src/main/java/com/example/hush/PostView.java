@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -35,6 +36,7 @@ public class PostView extends AppCompatActivity {
     String time = "";
     String likes = "";
     String comments = "";
+    String dislikes = "";
 
     ListView listPosts;
 
@@ -50,15 +52,52 @@ public class PostView extends AppCompatActivity {
         post = intent.getStringExtra(NewsFeed.KEY_POST);
         time = intent.getStringExtra(NewsFeed.KEY_TIME);
         likes = intent.getStringExtra(NewsFeed.KEY_LIKES);
+        dislikes = intent.getStringExtra(NewsFeed.KEY_DISLIKES);
         comments = intent.getStringExtra(NewsFeed.KEY_COMMENTS);
 
         TextView titleTV = findViewById(R.id.post_title);
         TextView postTV  = findViewById(R.id.post_text);
         TextView timeTV = findViewById(R.id.time_stamp);
+        TextView likesTV = findViewById(R.id.likes);
+        TextView dislikesTV = findViewById(R.id.dislikes);
 
         titleTV.setText(title);
         postTV.setText((post));
         timeTV.setText(time);
+        likesTV.setText(likes + " Likes");
+        dislikesTV.setText(dislikes + " Dislikes");
+
+
+        final ImageButton like_button = (ImageButton) findViewById(R.id.like_button);
+        like_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (like_button.getTag().toString().equals("outline")){
+                    like_button.setImageResource(R.drawable.ic_thumb_up_24px_filled);
+                    like_button.setTag("filled");
+                } else {
+                    like_button.setImageResource(R.drawable.ic_thumb_up_24px);
+                    like_button.setTag("outline");
+                }
+
+                Log.d("hi", "YAHOOO");
+            }
+        });
+
+        final ImageButton dislike_button = (ImageButton) findViewById(R.id.dislike_button);
+        dislike_button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                if (dislike_button.getTag().toString().equals("outline")){
+                    dislike_button.setImageResource(R.drawable.ic_thumb_down_24px_filled);
+                    dislike_button.setTag("filled");
+
+                    Log.d("hi", "YAHOOO");
+                } else{
+                    dislike_button.setImageResource(R.drawable.ic_thumb_down_24px);
+                    dislike_button.setTag("outline");
+                }
+
+            }
+        });
 
         Button backButton = (Button) findViewById(R.id.back_white_);
         backButton.setOnClickListener(new View.OnClickListener() {
