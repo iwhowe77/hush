@@ -23,6 +23,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 
 public class WritePost extends AppCompatActivity {
 
@@ -58,6 +62,11 @@ public class WritePost extends AppCompatActivity {
                     JSONObject obj = loadJSONObj(getApplicationContext());
                     JSONArray posts_array = obj.getJSONArray("posts");
 
+                    TimeZone tz = TimeZone.getTimeZone("UTC");
+                    DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'"); // Quoted "Z" to indicate UTC, no timezone offset
+                    df.setTimeZone(tz);
+                    String nowAsISO = df.format(new Date());
+
                     JSONObject new_entry = new JSONObject();
                     JSONArray emptyComments = new JSONArray();
                     //{"id": "1", "title": "Title 1", "post": "this is text for the first post title 1 blah blah",
@@ -65,7 +74,7 @@ public class WritePost extends AppCompatActivity {
                     new_entry.put("id",  Integer.toString(posts_array.length() + 2));
                     new_entry.put("title", titleText.getText());
                     new_entry.put("post", bodyText.getText());
-                    new_entry.put("time", "2014-03-12T13:37:27+00:00");
+                    new_entry.put("time", nowAsISO);
                     new_entry.put("likes", "0");
                     new_entry.put("dislikes", "0");
                     new_entry.put("comments", "0");

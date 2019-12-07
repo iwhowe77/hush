@@ -1,6 +1,7 @@
 package com.example.hush;
 
 import android.app.Activity;
+import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -64,6 +74,7 @@ public class CommentAdapter extends BaseAdapter {
                     if (dislike_button.getTag().toString().equals("outline")){
                         dislike_button.setImageResource(R.drawable.ic_thumb_down_24px_filled);
                         dislike_button.setTag("filled");
+
                         Log.d("hi", "YAHOOO");
                     } else{
                         dislike_button.setImageResource(R.drawable.ic_thumb_down_24px);
@@ -109,6 +120,7 @@ public class CommentAdapter extends BaseAdapter {
         }catch(Exception e) {}
         return convertView;
     }
+
 }
 
 class ListCommentViewHolder {
