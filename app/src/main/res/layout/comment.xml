@@ -53,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
+                android:tag="outline"
                 app:srcCompat="@drawable/ic_thumb_up_24px"
                 android:layout_gravity="center_vertical"
                 android:background="#ffffff">
@@ -77,6 +78,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_thumb_down_24px"
+                android:tag="outline"
                 android:layout_gravity="center_vertical"
                 android:background="#ffffff"/>
 

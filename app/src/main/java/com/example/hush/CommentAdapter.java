@@ -1,12 +1,16 @@
 package com.example.hush;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -29,12 +33,46 @@ public class CommentAdapter extends BaseAdapter {
         return position;
     }
     public View getView(int position, View convertView, ViewGroup parent) {
+
+
         ListCommentViewHolder holder = null;
         if (convertView == null) {
             holder = new ListCommentViewHolder();
             convertView = LayoutInflater.from(activity).inflate(
                     R.layout.comment, parent, false);
             //holder.galleryImage = (ImageView) convertView.findViewById(R.id.galleryImage);
+            final ImageButton like_button = (ImageButton) convertView.findViewById(R.id.like_button);
+
+
+            like_button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    if (like_button.getTag().toString().equals("outline")){
+                        like_button.setImageResource(R.drawable.ic_thumb_up_24px_filled);
+                        like_button.setTag("filled");
+                    } else {
+                        like_button.setImageResource(R.drawable.ic_thumb_up_24px);
+                        like_button.setTag("outline");
+                    }
+
+                    Log.d("hi", "YAHOOO");
+                }
+            });
+
+            final ImageButton dislike_button = (ImageButton) convertView.findViewById(R.id.dislike_button);
+            dislike_button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    if (dislike_button.getTag().toString().equals("outline")){
+                        dislike_button.setImageResource(R.drawable.ic_thumb_down_24px_filled);
+                        dislike_button.setTag("filled");
+                        Log.d("hi", "YAHOOO");
+                    } else{
+                        dislike_button.setImageResource(R.drawable.ic_thumb_down_24px);
+                        dislike_button.setTag("outline");
+                    }
+
+                }
+            });
+
             holder.text = (TextView) convertView.findViewById(R.id.text);
             holder.time = (TextView) convertView.findViewById(R.id.time);
             holder.likes = (TextView) convertView.findViewById(R.id.likes);
